@@ -1,0 +1,21 @@
+
+{% extends 'base/main.html' %}
+{% block title %}Delete confirmation{% endblock title %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592;</a>
+</div>
+
+<div class="card-body">
+<form method="POST", action="">
+    {% csrf_token %}
+    <P>Are you sure want to delete the task? "{{task}}"</P>
+    <a class="button" href="{% url 'tasks' %}">Cancel</a>
+    <input class="button" type="submit" value="Delete">
+</form>
+
+</div>
+
+
+{% endblock %}
